@@ -215,8 +215,8 @@ const ToDoList = () => {
               </Box>
             </Box>
             <Box >
-              <Button onClick={() => handleEditTask(index)}><EditIcon /></Button>
-              <Button onClick={() => handleDeleteTask(index)}><DeleteIcon /></Button>
+              <Button sx={{color:'grey'}} onClick={() => handleEditTask(index)}><EditIcon /></Button>
+              <Button sx={{color:'grey'}} onClick={() => handleDeleteTask(index)}><DeleteIcon /></Button>
             </Box>
           </Box>
           </Container>
