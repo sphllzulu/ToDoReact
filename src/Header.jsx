@@ -19,7 +19,7 @@ export const Header = () => {
 
   return (
     <React.Fragment>
-      <AppBar position="static" sx={{ backgroundColor: 'transparent', border: '1px solid #063970', color: 'black' }}>
+      <AppBar position="sticky" sx={{ backgroundColor: 'white', border: '1px solid #063970', color: 'black' }}>
         <Toolbar className="nav">
           <div style={{ display: 'flex', flexDirection: 'column'}}>
             <AccountCircleIcon style={{ fontSize: "50px" }} />

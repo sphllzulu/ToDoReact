@@ -46,7 +46,7 @@ app.use(bodyParser.json());
 
 const db = new sqlite3.Database('todo.db');
 
-// Initialize the database
+
 db.serialize(() => {
   db.run(`CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -79,7 +79,7 @@ app.post('/signup', (req, res) => {
   stmt.finalize();
 });
 
-// User sign-in endpoint
+
 
 app.post('/signin', (req, res) => {
   const { email, password } = req.body;
@@ -96,7 +96,7 @@ app.post('/signin', (req, res) => {
   });
 });
 
-// Get tasks for a user
+
 app.get('/tasks', (req, res) => {
   const userId = req.query.userId;
   db.all("SELECT * FROM tasks WHERE user_id = ?", [userId], (err, rows) => {
@@ -108,7 +108,7 @@ app.get('/tasks', (req, res) => {
   });
 });
 
-// Add a new task
+
 app.post('/tasks', (req, res) => {
   const { userId, title, description, priority, completed } = req.body;
   const stmt = db.prepare("INSERT INTO tasks (user_id, title, description, priority, completed) VALUES (?, ?, ?, ?, ?)");

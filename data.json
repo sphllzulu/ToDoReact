@@ -1,0 +1,103 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "test@example.com",
+      "password": "password123"
+    },
+    {
+      "id": "f485",
+      "email": "sphllzulu@gmail.com",
+      "password": "Ntsw3mb4"
+    },
+    {
+      "id": "8be3",
+      "email": "xolinxiweni@gmail.com",
+      "password": "AtwWKmX26xFQq6s"
+    },
+    {
+      "id": "8910",
+      "email": "mandilakheM@gmail.com",
+      "password": "Yr8avCjqhfXmY47"
+    },
+    {
+      "id": "1cfe",
+      "email": "cxvxb",
+      "password": "bcvbc"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "userId": 1,
+      "title": "Sample Task",
+      "description": "This is a sample task",
+      "priority": "High",
+      "completed": false
+    },
+    {
+      "id": "ca93",
+      "title": "gjdfhgkdhgh",
+      "description": "hfghfghf",
+      "priority": "Medium",
+      "completed": false,
+      "userId": "f485"
+    },
+    {
+      "id": "e190",
+      "title": "fhfghfgj",
+      "description": "hjhkhjkhj",
+      "priority": "Low",
+      "completed": false,
+      "userId": "f485"
+    },
+    {
+      "id": "df9a",
+      "title": "hgjghg",
+      "description": "ghjg",
+      "priority": "Medium",
+      "completed": false,
+      "userId": "f485"
+    },
+    {
+      "id": "6508",
+      "title": "hjgjh",
+      "description": "hgjggjhg",
+      "priority": "High",
+      "completed": false,
+      "userId": "f485"
+    },
+    {
+      "id": "5217",
+      "title": "dggfg",
+      "description": "fgdgd",
+      "priority": "High",
+      "completed": false,
+      "userId": "8be3"
+    },
+    {
+      "id": "9733",
+      "title": "fdhgdhd",
+      "description": "dhgfhfghf",
+      "priority": "Medium",
+      "completed": false,
+      "userId": "8be3"
+    },
+    {
+      "id": "d2d8",
+      "title": "jghdhgpi",
+      "description": "fghfgjfg",
+      "priority": "High",
+      "completed": false,
+      "userId": "8910"
+    },
+    {
+      "id": "0e50",
+      "title": "hfjnfhjf",
+      "description": "fnhjnghj",
+      "priority": "Medium",
+      "completed": false,
+      "userId": "8910"
+    }
+  ]
+}
