@@ -281,7 +281,8 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
-            variant='standard'
+            variant='outlined'
+            sx={{mb:3}}
           />
           <TextField
             required
@@ -291,7 +292,7 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
-            variant='standard'
+            variant='outlined'
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}

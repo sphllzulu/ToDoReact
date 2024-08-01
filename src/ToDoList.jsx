@@ -355,14 +355,15 @@ const ToDoList = () => {
   };
 
   return (
-    <div className="toDo">
+    <div className="toDo"   style={{padding:'10px'}}>
       <Header />
-      <Container>
+      
         <Box
           component="form"
           sx={{
             '& > :not(style)': { m: 1, width: '25ch' },
             padding: 2,
+            border: '1px solid grey',
           }}
           noValidate
           autoComplete="off"
@@ -413,10 +414,10 @@ const ToDoList = () => {
             {editIndex !== null ? 'Update' : 'Add'}
           </Button>
         </Box>
-      </Container>
+      
       <Box sx={{ width: '100%', margin: '0 auto', marginTop: 3 }}>
         {filteredTasks.map((task, index) => (
-          <Container key={index}>
+          // <Container key={index}>
             <Box
               className={`task-box ${task.completed ? 'completed' : ''}`}
               sx={{
@@ -446,7 +447,7 @@ const ToDoList = () => {
                 <Button sx={{ color: 'grey' }} onClick={() => handleDeleteTask(index)}><DeleteIcon /></Button>
               </Box>
             </Box>
-          </Container>
+          // </Container>
         ))}
       </Box>
     </div>

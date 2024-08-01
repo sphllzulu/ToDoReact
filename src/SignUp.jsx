@@ -245,6 +245,7 @@ export default function SignUp() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          padding:'3'
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: 'teal' }}>
@@ -262,7 +263,8 @@ export default function SignUp() {
             name="email"
             autoComplete="email"
             autoFocus
-            variant='standard'
+            variant='outlined'
+            sx={{mb:3}}
           />
           <TextField
             required
@@ -272,7 +274,7 @@ export default function SignUp() {
             type="password"
             id="password"
             autoComplete="new-password"
-            variant='standard'
+            variant='outlined'
           />
           <Button
             type="submit"
@@ -285,7 +287,7 @@ export default function SignUp() {
           </Button>
           <Grid container>
             <Grid item>
-              <Link style={{ textDecoration: 'none', color: 'teal' }} to="/signin">Already have an account? Sign In</Link>
+              <Link style={{ textDecoration: 'none', color: 'teal' }} to="/">Already have an account? Sign In</Link>
             </Grid>
           </Grid>
         </Box>
