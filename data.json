@@ -114,14 +114,6 @@
       "priority": "Low",
       "completed": false,
       "userId": "8be3"
-    },
-    {
-      "id": "7561",
-      "title": "Ron Weasley",
-      "description": "Ron loves Hermione",
-      "priority": "Medium",
-      "completed": false,
-      "userId": "8be3"
     }
   ]
 }

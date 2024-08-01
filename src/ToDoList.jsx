@@ -188,7 +188,7 @@ const ToDoList = () => {
       
       <Box sx={{ width: '100%', margin: '0 auto', marginTop: 3 }}>
         {filteredTasks.map((task, index) => (
-          // <Container key={index}>
+          
             <Box
               className={`task-box ${task.completed ? 'completed' : ''}`}
               sx={{
@@ -218,7 +218,7 @@ const ToDoList = () => {
                 <Button sx={{ color: 'lightgrey' }} onClick={() => handleDeleteTask(index)}><DeleteIcon /></Button>
               </Box>
             </Box>
-          // </Container>
+       
         ))}
       </Box>
     </div>
