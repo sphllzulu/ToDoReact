@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -28,6 +26,7 @@ export default function SignUp() {
       email: data.get('email'),
       password: data.get('password'),
     };
+    
   
     axios.post('http://localhost:3001/users', user)
       .then(response => {

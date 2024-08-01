@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -14,7 +12,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import './ToDoList.css';
 import Header from './Header';
 import axios from 'axios';
-import { Container } from '@mui/material';
+
 
 const ToDoList = () => {
   const [tasks, setTasks] = useState([]);
@@ -116,9 +114,9 @@ const ToDoList = () => {
       case 'High':
         return '#FF2400';
       case 'Medium':
-        return 'yellow';
+        return '#FFBF00';
       case 'Low':
-        return 'green';
+        return '#006400';
       default:
         return 'transparent';
     }
@@ -133,7 +131,10 @@ const ToDoList = () => {
           sx={{
             '& > :not(style)': { m: 1, width: '25ch' },
             padding: 2,
-            border: '1px solid grey',
+            border: '1px solid teal',
+            
+            
+            
           }}
           noValidate
           autoComplete="off"
@@ -193,7 +194,7 @@ const ToDoList = () => {
               sx={{
                 backgroundColor: getPriorityColor(task.priority),
                 padding: 2,
-                marginBottom: 2,
+                marginBottom: 1,
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
@@ -213,8 +214,8 @@ const ToDoList = () => {
                 </Box>
               </Box>
               <Box>
-                <Button sx={{ color: 'grey' }} onClick={() => handleEditTask(index)}><EditIcon /></Button>
-                <Button sx={{ color: 'grey' }} onClick={() => handleDeleteTask(index)}><DeleteIcon /></Button>
+                <Button sx={{ color: 'lightgrey' }} onClick={() => handleEditTask(index)}><EditIcon /></Button>
+                <Button sx={{ color: 'lightgrey' }} onClick={() => handleDeleteTask(index)}><DeleteIcon /></Button>
               </Box>
             </Box>
           // </Container>
