@@ -242,7 +242,7 @@ import './ToDoList.css';
 import Header from './Header';
 import axios from 'axios';
 
-// Get the API URL from environment variables
+
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const ToDoList = () => {
@@ -262,7 +262,7 @@ const ToDoList = () => {
   }, []);
 
   const fetchTasks = () => {
-    axios.get(`${apiUrl}/tasks?userId=${userId}`) // Use environment variable
+    axios.get(`${apiUrl}/tasks?userId=${userId}`) 
       .then(response => {
         setTasks(response.data);
       })
@@ -280,6 +280,11 @@ const ToDoList = () => {
   };
 
   const handleAddTask = () => {
+    if (!formData.title.trim() || !formData.description.trim()) {
+      alert('Title and Description are required!');
+      return;
+    }
+
     const newTask = { ...formData, userId };
 
     if (editIndex !== null) {
@@ -292,7 +297,7 @@ const ToDoList = () => {
           console.error('There was an error updating the task!', error);
         });
     } else {
-      axios.post(`${apiUrl}/tasks`, newTask) // Use environment variable
+      axios.post(`${apiUrl}/tasks`, newTask) 
         .then(() => {
           fetchTasks();
         })
@@ -310,7 +315,7 @@ const ToDoList = () => {
   };
 
   const handleDeleteTask = (index) => {
-    axios.delete(`${apiUrl}/tasks/${tasks[index].id}`) // Use environment variable
+    axios.delete(`${apiUrl}/tasks/${tasks[index].id}`) 
       .then(() => {
         fetchTasks();
       })
@@ -343,11 +348,11 @@ const ToDoList = () => {
   const getPriorityColor = (priority) => {
     switch (priority) {
       case 'High':
-        return '#FF2400'; // Red for high priority
+        return '#FF2400'; 
       case 'Medium':
-        return '#FFBF00'; // Yellow for medium priority
+        return '#FFBF00'; 
       case 'Low':
-        return '#006400'; // Green for low priority
+        return '#006400'; 
       default:
         return 'transparent';
     }

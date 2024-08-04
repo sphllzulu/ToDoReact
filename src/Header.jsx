@@ -25,7 +25,7 @@ export const Header = () => {
             <AccountCircleIcon style={{ fontSize: "50px" }} />
             <span style={{fontSize:'0.5rem'}}>{email}</span>
           </div>
-          <h1 style={{ color: "black" }}>ToDoList</h1>
+          <h1 style={{ color: "black" }}>TaskTrek</h1>
           <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
             <LogoutIcon />
           </Link>
