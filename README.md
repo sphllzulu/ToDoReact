@@ -1,5 +1,6 @@
 Please click this link to see the design: https://drive.google.com/file/d/1WTH8KrsuTGMPzIx0K203wmf1Vu7R3Wox/view?usp=sharing
 
+
 #Introduction
 This is a simple yet powerful To-Do List application built with React and Vite. It allows users to register, log in, and manage their to-do list items with features such as adding, updating, deleting, and searching tasks. User data and tasks are stored in an SQLite database.
 
@@ -33,14 +34,10 @@ npm or yarn
 Installation Steps
 Clone the Repository
 
-bash
-Copy code
-git clone https://github.com/your-username/react-vite-todo.git
-cd react-vite-todo
-Install Dependencies
 
-bash
-Copy code
+git clone --branch main https://github.com/sphllzulu/ToDoReact.git
+cd toDoReact
+Install Dependencies
 npm install
 # or
 yarn install
@@ -48,8 +45,7 @@ Setup SQLite Database
 
 Ensure SQLite is installed on your system.
 Run the provided SQL script to create the necessary tables (users and tasks).
-sql
-Copy code
+
 -- create_db.sql
 CREATE TABLE users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -65,22 +61,24 @@ CREATE TABLE tasks (
   completed BOOLEAN,
   FOREIGN KEY(user_id) REFERENCES users(id)
 );
-Start the Backend Server
-node server.js
-Start the Frontend Development Server
 
+Start the Backend Server
+open the backend directory in an intergrated terminal
+npm start
+Start the Frontend Development Server
 npm run dev
 # or
 yarn dev
 
 #Usage
-Registration
+###Registration
 Go to the registration page and create a new account.
-Login
+###Login
 Log in using your registered credentials.
-Home Page
+###Home Page
 Manage your to-do list items: add, edit, delete, and search tasks.
-Technologies Used
+
+##Technologies Used
 Frontend:
 React
 Vite
@@ -93,8 +91,7 @@ SQLite
 
 #Important Notes
 Ensure that the backend server is running on http://localhost:3001 as expected.
-Modify the backend server configuration if needed to match your environment setup.
-Store sensitive information securely and avoid hardcoding secrets in your codebase.
+
 
 #Acknowledgements
 This project was created using React and Vite.
