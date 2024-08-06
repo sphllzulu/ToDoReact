@@ -86,7 +86,7 @@ export default function SignUp() {
           </Button>
           <Grid container>
             <Grid item>
-              <Link style={{ textDecoration: 'none', color: 'teal' }} to="/signin">Already have an account? Sign In</Link>
+              <Link style={{ textDecoration: 'none', color: 'teal' }} to="/">Already have an account? Sign In</Link>
             </Grid>
           </Grid>
         </Box>
