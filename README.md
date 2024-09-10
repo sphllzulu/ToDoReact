@@ -70,7 +70,7 @@ This is a simple to-do list application with three main pages: **Login**, **Regi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/todo-sqlite-app.git
+   https://github.com/sphllzulu/ToDoReact.git
    cd todo-sqlite-app
 
 2. Install the dependencies:
