@@ -1,98 +1,84 @@
 Please click this link to see the design: https://drive.google.com/file/d/1WTH8KrsuTGMPzIx0K203wmf1Vu7R3Wox/view?usp=sharing
 
+# Three-Page To-Do List App
 
-#Introduction
-This is a simple yet powerful To-Do List application built with React and Vite. It allows users to register, log in, and manage their to-do list items with features such as adding, updating, deleting, and searching tasks. User data and tasks are stored in an SQLite database.
+This is a simple to-do list application with three main pages: **Login**, **Registration**, and **Home**. The application allows users to register, log in, and manage their to-do lists. It uses **SQLite** for data storage and **Material UI** for styling, providing a modern, responsive user interface.
 
-#Features
-User Authentication: Users can register and log in with their credentials.
-To-Do List Management: Users can add, edit, delete, and search to-do list items.
-Priority Indication: Task priorities are color-coded for easy identification.
-CRUD Operations: Full support for creating, reading, updating, and deleting tasks.
-Responsive Design: The application is responsive and user-friendly.
-Material UI Integration: Material UI is used for a modern and visually appealing interface.
-Pages
-#Login Page
-Users can log in with their username and password.
+## Table of Contents
 
-#Registration Page
-New users can register by providing a username and password.
+- [Features](#features)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Database](#database)
+- [CRUD Operations](#crud-operations)
+- [UI/UX](#uiux)
+- [Security](#security)
+- [Contributing](#contributing)
+- [License](#license)
 
-#Home Page
-Displays the to-do list items and allows users to:
+---
 
-Search for items by keyword.
-Add new items with a task description and priority.
-Edit existing items.
-Delete items.
+## Features
 
-#Setup and Installation
-#Prerequisites
-Node.js (>=14.x)
-npm or yarn
+### Pages
 
-Installation Steps
-Clone the Repository
+1. **Login Page**
+   - Users can log in using their credentials (username and password).
 
+2. **Registration Page**
+   - New users can register by providing a username and password.
+   - User information is securely stored in an SQLite database.
 
-git clone --branch main https://github.com/sphllzulu/ToDoReact.git
-cd toDoReact
-Install Dependencies
-npm install
-# or
-yarn install
-Setup SQLite Database
+3. **Home Page**
+   - Displays the user’s to-do list items.
+   - Users can perform the following actions on their to-do list:
+     - **Search**: Search for tasks by keyword.
+     - **Add**: Add new tasks to the to-do list with a description and priority.
+     - **Update**: Edit existing tasks.
+     - **Delete**: Remove tasks from the list.
 
-Ensure SQLite is installed on your system.
-Run the provided SQL script to create the necessary tables (users and tasks).
+### To-Do List Features
 
--- create_db.sql
-CREATE TABLE users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  username TEXT NOT NULL UNIQUE,
-  password TEXT NOT NULL
-);
+- **CRUD Operations**: Create, Read, Update, and Delete tasks.
+- **Priority Levels**: Users can assign a priority (High, Medium, Low) to tasks, represented by different colours:
+  - High (Red)
+  - Medium (Yellow)
+  - Low (Green)
+- **Search Functionality**: Users can search through tasks using keywords.
 
-CREATE TABLE tasks (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  user_id INTEGER,
-  description TEXT,
-  priority TEXT,
-  completed BOOLEAN,
-  FOREIGN KEY(user_id) REFERENCES users(id)
-);
+---
 
-Start the Backend Server
-open the backend directory in an intergrated terminal
-npm start
-Start the Frontend Development Server
-npm run dev
-# or
-yarn dev
+## Technologies
 
-#Usage
-###Registration
-Go to the registration page and create a new account.
-###Login
-Log in using your registered credentials.
-###Home Page
-Manage your to-do list items: add, edit, delete, and search tasks.
+- **Frontend**: ReactJS, Material-UI for styling
+- **Backend**: SQLite for database management
+- **State Management**: React Context or Redux (optional, based on project size)
+- **Validation**: Form validation for login, registration, and to-do inputs
 
-##Technologies Used
-Frontend:
-React
-Vite
-Material UI
+---
 
-Backend:
-Node.js
-Express
-SQLite
+## Installation
 
-#Important Notes
-Ensure that the backend server is running on http://localhost:3001 as expected.
+### Prerequisites
 
+- **Node.js** (for running the React application)
+- **SQLite** (for managing the database)
 
-#Acknowledgements
-This project was created using React and Vite.
-UI components are styled with Material UI.
+### Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/todo-sqlite-app.git
+   cd todo-sqlite-app
+
+2. Install the dependencies:
+
+   ```bash
+   npm install
+   
+3. Start the project by running server and project at the same time:
+
+   ```bash
+   npm start
