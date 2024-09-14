@@ -14,14 +14,37 @@
   /* opacity: 0.6; */
 }
 
-.task-description {
+
+
+
+.task-priority {
   display: none;
+}
+
+
+
+.task-container {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.5s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .task-box:hover .task-description {
   display: block;
 }
 
-.task-priority {
+.task-description {
   display: none;
+  transition: opacity 0.3s ease;
+}
+
+.completed {
+  text-decoration: line-through;
 }

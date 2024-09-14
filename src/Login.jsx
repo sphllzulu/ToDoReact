@@ -420,6 +420,117 @@
 
 
 
+// import React from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import Avatar from '@mui/material/Avatar';
+// import Button from '@mui/material/Button';
+// import CssBaseline from '@mui/material/CssBaseline';
+// import TextField from '@mui/material/TextField';
+// import { Link } from "react-router-dom";
+// import Grid from '@mui/material/Grid';
+// import Box from '@mui/material/Box';
+// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+// import Typography from '@mui/material/Typography';
+// import Container from '@mui/material/Container';
+// import { useDatabase } from './DatabaseContext'; // Import the context
+
+// export default function SignIn() {
+//   const navigate = useNavigate();
+//   const { dbInitialized, signInUser } = useDatabase();
+
+//   const handleSubmit = async (event) => {
+//     event.preventDefault();
+//     const data = new FormData(event.currentTarget);
+
+//     const email = data.get('email');
+//     const password = data.get('password');
+
+//     if (!dbInitialized) {
+//       console.error('Database is not initialized. Please wait until the database setup is complete.');
+//       return;
+//     }
+
+//     try {
+//       // Validate email and password
+//       if (!email || !password) {
+//         throw new Error('Email and password fields cannot be empty.');
+//       }
+
+//       // Attempt to sign in the user
+//       const userId = await signInUser(email, password);
+      
+//       if (!userId) {
+//         throw new Error('Invalid email or password.');
+//       }
+
+//       // If successful, store user data and navigate
+//       localStorage.setItem('userId', userId);
+//       localStorage.setItem('userEmail', email);
+//       navigate('/home'); // Navigate to the home page upon successful sign-in
+//     } catch (error) {
+//       // Provide detailed error messages
+//       console.error('Error signing in:', error.message);
+//     }
+//   };
+
+//   return (
+//     <Container component="main" maxWidth="xs">
+//       <CssBaseline />
+//       <Box
+//         sx={{
+//           marginTop: 8,
+//           display: 'flex',
+//           flexDirection: 'column',
+//           alignItems: 'center',
+//         }}
+//       >
+//         <Avatar sx={{ m: 1, bgcolor: 'teal' }}>
+//           <LockOutlinedIcon />
+//         </Avatar>
+//         <Typography component="h1" variant="h5">
+//           Sign in
+//         </Typography>
+//         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
+//           <TextField
+//             required
+//             fullWidth
+//             id="email"
+//             label="Email Address"
+//             name="email"
+//             autoComplete="email"
+//             autoFocus
+//             variant='standard'
+//           />
+//           <TextField
+//             required
+//             fullWidth
+//             name="password"
+//             label="Password"
+//             type="password"
+//             id="password"
+//             autoComplete="current-password"
+//             variant='standard'
+//           />
+//           <Button
+//             type="submit"
+//             fullWidth
+//             variant="outlined"
+//             sx={{ mt: 3, color: 'teal', mb: 2, border: '2px solid teal' }}
+//           >
+//             Sign In
+//           </Button>
+//           <Grid container>
+//             <Grid item>
+//               <Link style={{ textDecoration: 'none', color: 'teal' }} to="/signup">Don't have an account? Sign Up</Link>
+//             </Grid>
+//           </Grid>
+//         </Box>
+//       </Box>
+//     </Container>
+//   );
+// }
+
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -433,10 +544,15 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useDatabase } from './DatabaseContext'; // Import the context
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 export default function SignIn() {
   const navigate = useNavigate();
   const { dbInitialized, signInUser } = useDatabase();
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
+  const [snackbarMessage, setSnackbarMessage] = React.useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = React.useState('info');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -451,26 +567,29 @@ export default function SignIn() {
     }
 
     try {
-      // Validate email and password
       if (!email || !password) {
         throw new Error('Email and password fields cannot be empty.');
       }
 
-      // Attempt to sign in the user
       const userId = await signInUser(email, password);
-      
+
       if (!userId) {
         throw new Error('Invalid email or password.');
       }
 
-      // If successful, store user data and navigate
       localStorage.setItem('userId', userId);
       localStorage.setItem('userEmail', email);
-      navigate('/'); // Navigate to the home page upon successful sign-in
+      navigate('/home');
+
     } catch (error) {
-      // Provide detailed error messages
-      console.error('Error signing in:', error.message);
+      setSnackbarMessage(error.message);
+      setSnackbarSeverity('error');
+      setOpenSnackbar(true);
     }
+  };
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
   };
 
   return (
@@ -482,13 +601,21 @@ export default function SignIn() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          backgroundColor: 'background.paper',
+          borderRadius: 2,
+          boxShadow: 3,
+          p: 3,
+          transition: 'all 0.3s ease-in-out',
+          '&:hover': {
+            boxShadow: 6,
+          },
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: 'teal' }}>
+        <Avatar sx={{ m: 1, bgcolor: 'teal', transition: 'all 0.3s ease-in-out', '&:hover': { bgcolor: 'darkcyan' } }}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
+        <Typography component="h1" variant="h5" sx={{ mb: 2, fontWeight: 'bold', color: 'teal' }}>
+          Sign In
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
           <TextField
@@ -499,7 +626,8 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
-            variant='standard'
+            variant='outlined'
+            sx={{ mb: 2 }}
           />
           <TextField
             required
@@ -509,23 +637,32 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
-            variant='standard'
+            variant='outlined'
+            sx={{ mb: 3 }}
           />
           <Button
             type="submit"
             fullWidth
             variant="outlined"
-            sx={{ mt: 3, color: 'teal', mb: 2, border: '2px solid teal' }}
+            sx={{ mb: 2, color: 'teal', border: '2px solid teal', '&:hover': { border: '2px solid darkcyan', color: 'darkcyan' } }}
           >
             Sign In
           </Button>
           <Grid container>
             <Grid item>
-              <Link style={{ textDecoration: 'none', color: 'teal' }} to="/signup">Don't have an account? Sign Up</Link>
+              <Link style={{ textDecoration: 'none', color: 'teal', fontWeight: 'bold' }} to="/signup">
+                Don't have an account? Sign Up
+              </Link>
             </Grid>
           </Grid>
         </Box>
       </Box>
+
+      <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={handleCloseSnackbar}>
+        <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </Container>
   );
 }
