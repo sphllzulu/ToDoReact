@@ -1,101 +1,77 @@
-Please click this link to see the design: https://drive.google.com/file/d/1WTH8KrsuTGMPzIx0K203wmf1Vu7R3Wox/view?usp=sharing
+# To-Do List Application
 
-#Introduction
-This is a simple yet powerful To-Do List application built with React and Vite. It allows users to register, log in, and manage their to-do list items with features such as adding, updating, deleting, and searching tasks. User data and tasks are stored in an SQLite database.
+## Overview
 
-#Features
-User Authentication: Users can register and log in with their credentials.
-To-Do List Management: Users can add, edit, delete, and search to-do list items.
-Priority Indication: Task priorities are color-coded for easy identification.
-CRUD Operations: Full support for creating, reading, updating, and deleting tasks.
-Responsive Design: The application is responsive and user-friendly.
-Material UI Integration: Material UI is used for a modern and visually appealing interface.
-Pages
-#Login Page
-Users can log in with their username and password.
+This To-Do List Application is a single-page app with three main pages: **Login**, **Registration**, and **Home**. Users can manage their to-do list items with features such as adding, editing, deleting, and searching items. The app uses `sql.js` for data storage and Material-UI for styling.
 
-#Registration Page
-New users can register by providing a username and password.
+## Features
 
-#Home Page
-Displays the to-do list items and allows users to:
+### Pages
 
-Search for items by keyword.
-Add new items with a task description and priority.
-Edit existing items.
-Delete items.
+- **Login Page**
+  - Users can log in using their credentials.
 
-#Setup and Installation
-#Prerequisites
-Node.js (>=14.x)
-npm or yarn
+- **Registration Page**
+  - New users can register with the following details:
+    - Username
+    - Password
 
-Installation Steps
-Clone the Repository
+- **Home Page**
+  - Displays the to-do list items.
+  - Allows users to manage their tasks with the following features:
+    - **Search Function**: Search for items by keyword.
+    - **Add Function**: Add new items with:
+      - Task Description
+      - Priority (High, Medium, Low)
+    - **Delete Function**: Remove existing items.
+    - **Update Function**: Edit existing items.
+    - **Priority Colors**: 
+      - Red for High
+      - Yellow for Medium
+      - Green for Low
 
-bash
-Copy code
-git clone https://github.com/your-username/react-vite-todo.git
-cd react-vite-todo
-Install Dependencies
+## Technical Requirements
 
-bash
-Copy code
-npm install
-# or
-yarn install
-Setup SQLite Database
+- **CRUD Operations**: Implement Create, Read, Update, and Delete operations for managing to-do list items.
+- **Data Storage**: Use `sql.js` to handle user information and to-do list items.
+- **Responsiveness**: Ensure the application is responsive and user-friendly across various devices.
+- **Validation**: Include proper validation for input fields to prevent errors.
+- **Authentication & Authorization**: Protect user data with authentication and authorization mechanisms.
+- **Styling**: Utilize Material-UI to enhance the application's appearance and user experience.
 
-Ensure SQLite is installed on your system.
-Run the provided SQL script to create the necessary tables (users and tasks).
-sql
-Copy code
--- create_db.sql
-CREATE TABLE users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  username TEXT NOT NULL UNIQUE,
-  password TEXT NOT NULL
-);
+## Installation
 
-CREATE TABLE tasks (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  user_id INTEGER,
-  description TEXT,
-  priority TEXT,
-  completed BOOLEAN,
-  FOREIGN KEY(user_id) REFERENCES users(id)
-);
-Start the Backend Server
-node server.js
-Start the Frontend Development Server
+1. **Clone the Repository**
 
-npm run dev
-# or
-yarn dev
+   ```bash
+   git clone https://github.com/sphllzulu/ToDoReact.git
+   cd ToDoReact
 
-#Usage
-Registration
-Go to the registration page and create a new account.
-Login
-Log in using your registered credentials.
-Home Page
-Manage your to-do list items: add, edit, delete, and search tasks.
-Technologies Used
-Frontend:
-React
-Vite
-Material UI
+2. **Install dependancies**
 
-Backend:
-Node.js
-Express
-SQLite
+   ```bash
+   npm install
 
-#Important Notes
-Ensure that the backend server is running on http://localhost:3001 as expected.
-Modify the backend server configuration if needed to match your environment setup.
-Store sensitive information securely and avoid hardcoding secrets in your codebase.
+3. **Run the project**
 
-#Acknowledgements
-This project was created using React and Vite.
-UI components are styled with Material UI.
+   ```bash
+   npm run dev
+
+## Usage
+### Registration
+
+Navigate to the registration page.
+Enter your username and password.
+Submit the form to create a new account.
+
+### Login
+Go to the login page.
+Enter your credentials.
+Submit the form to log in.
+
+## Manage To-Do List
+Search: Use the search bar to find specific tasks.
+Add: Click the add button and fill in the task details.
+Edit: Click the edit icon next to a task to modify its details.
+Delete: Click the delete icon next to a task to remove it.
+View Priorities: Tasks are color-coded by priority.   
