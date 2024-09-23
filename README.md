@@ -44,12 +44,12 @@ The main interface where users interact with their to-do list.
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/todo-list-app.git
+   git clone https://github.com/sphllzulu/ToDoReact.git
    ```
 
 2. Navigate to the project directory:
    ```
-   cd todo-list-app
+   cd ToDoReact
    ```
 
 3. Install dependencies:
