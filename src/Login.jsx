@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -41,21 +40,24 @@ export default function SignIn() {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" sx={{ borderRadius: 2, boxShadow: 3, p: 4, backgroundColor: 'white' }}>
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: 6,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          borderRadius: 1,
+          padding: 3,
+          backgroundColor: 'white',
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: 'teal' }}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
+        <Typography component="h1" variant="h4" sx={{ fontWeight: 'bold', color: 'teal' }}>
+          Sign In
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
           <TextField
@@ -66,7 +68,8 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
-            variant='standard'
+            variant="outlined"
+            sx={{ mb: 2 }}
           />
           <TextField
             required
@@ -76,24 +79,34 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
-            variant='standard'
+            variant="outlined"
+            sx={{ mb: 2 }}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
+            sx={{ mb: 2 }}
           />
           <Button
             type="submit"
             fullWidth
-            variant="outlined"
-            sx={{ mt: 3, color: 'teal', mb: 2, border: '2px solid teal' }}
+            variant="contained"
+            sx={{ 
+              mt: 3, 
+              mb: 2, 
+              backgroundColor: 'teal', 
+              color: 'white', 
+              fontWeight: 'bold',
+              '&:hover': { backgroundColor: 'darkcyan' } 
+            }}
           >
             Sign In
           </Button>
-          <Grid container>
-            
+          <Grid container justifyContent="center">
             <Grid item>
-              <Link style={{ textDecoration: 'none', color: 'teal' }} to="/signup">Don't have an account? Sign Up</Link>
+              <Link style={{ textDecoration: 'none', color: 'teal', fontWeight: 'bold' }} to="/signup">
+                Don't have an account? Sign Up
+              </Link>
             </Grid>
           </Grid>
         </Box>
@@ -101,5 +114,3 @@ export default function SignIn() {
     </Container>
   );
 }
-
-

@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -29,8 +27,8 @@ export default function SignUp() {
     axios.post('http://localhost:3001/signup', user)
       .then(response => {
         console.log('User signed up successfully:', response.data);
-       localStorage.setItem('userId', response.data.userId);
-       localStorage.setItem('userEmail', user.email); 
+        localStorage.setItem('userId', response.data.userId);
+        localStorage.setItem('userEmail', user.email); 
         navigate('/');  // Navigate to the home page upon successful sign-up
       })
       .catch(error => {
@@ -39,21 +37,24 @@ export default function SignUp() {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" sx={{ borderRadius: 2, boxShadow: 3, p: 4, backgroundColor: 'white' }}>
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: 6,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          borderRadius: 1,
+          padding: 3,
+          backgroundColor: 'white',
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: 'teal' }}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign up
+        <Typography component="h1" variant="h4" sx={{ fontWeight: 'bold', color: 'teal' }}>
+          Sign Up
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
           <TextField
@@ -64,7 +65,8 @@ export default function SignUp() {
             name="email"
             autoComplete="email"
             autoFocus
-            variant='standard'
+            variant="outlined"
+            sx={{ mb: 2 }}
           />
           <TextField
             required
@@ -74,19 +76,29 @@ export default function SignUp() {
             type="password"
             id="password"
             autoComplete="new-password"
-            variant='standard'
+            variant="outlined"
+            sx={{ mb: 3 }}
           />
           <Button
             type="submit"
             fullWidth
-            variant="outlined"
-            sx={{ mt: 3, color: 'teal', mb: 2, border: '2px solid teal' }}
+            variant="contained"
+            sx={{ 
+              mt: 3, 
+              mb: 2, 
+              backgroundColor: 'teal', 
+              color: 'white', 
+              fontWeight: 'bold',
+              '&:hover': { backgroundColor: 'darkcyan' } 
+            }}
           >
             Sign Up
           </Button>
-          <Grid container>
+          <Grid container justifyContent="center">
             <Grid item>
-              <Link style={{ textDecoration: 'none', color: 'teal' }} to="/">Already have an account? Sign In</Link>
+              <Link style={{ textDecoration: 'none', color: 'teal', fontWeight: 'bold' }} to="/">
+                Already have an account? Sign In
+              </Link>
             </Grid>
           </Grid>
         </Box>

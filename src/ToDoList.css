@@ -25,3 +25,36 @@
 .task-priority {
   display: none;
 }
+
+
+
+/* ToDoList.css */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.task-box {
+  animation: slideUp 0.5s ease-in-out;
+  transition: all 0.3s ease;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Optional: Smooth animation for editing or deleting */
+.task-box button {
+  transition: color 0.3s ease;
+}
+
+.task-box button:hover {
+  color: teal;
+}
