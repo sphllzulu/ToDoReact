@@ -51,7 +51,6 @@ This is a simple to-do list application with three main pages: **Login**, **Regi
 
 - **Frontend**: ReactJS, Material-UI for styling
 - **Backend**: SQLite for database management
-- **State Management**: React Context or Redux (optional, based on project size)
 - **Validation**: Form validation for login, registration, and to-do inputs
 
 ---
