@@ -76,11 +76,16 @@ This is a simple to-do list application with three main pages: **Login**, **Regi
    ```bash
    npm install
    
-3. Start the project by running server and project at the same time:
+3. Start the project:
 
    ```bash
-   npm start
+   npm run dev
 
+4. Open the backend folder in the terminal, start the server:
+
+   ```bash
+   cd backend
+   node server
 
 ## Usage
 Login & Registration
