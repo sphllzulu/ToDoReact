@@ -2,7 +2,7 @@
 
 ## Overview
 
-This To-Do List Application is a single-page app with three main pages: **Login**, **Registration**, and **Home**. Users can manage their to-do list items with features such as adding, editing, deleting, and searching items. The app uses `sql.js` for data storage and Material-UI for styling. Below is the link for the design: https://www.figma.com/design/3RycUoOJXc4TpMT2XCr34C/Untitled?node-id=0-1&t=yDPh4iIONZwQ1XyB-1. Please find attached the linl to the deployed app: https://to-do-react-git-sqljs-sipheleles-projects-aabc7221.vercel.app/
+This To-Do List Application is a single-page app with three main pages: **Login**, **Registration**, and **Home**. Users can manage their to-do list items with features such as adding, editing, deleting, and searching items. The app uses `sql.js` for data storage and Material-UI for styling. Below is the link for the design: https://www.figma.com/design/3RycUoOJXc4TpMT2XCr34C/Untitled?node-id=0-1&t=yDPh4iIONZwQ1XyB-1. Please find attached the link to the deployed app: https://to-do-react-git-sqljs-sipheleles-projects-aabc7221.vercel.app/
 
 ## Features
 
