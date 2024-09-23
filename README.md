@@ -13,9 +13,7 @@ This is a simple to-do list application with three main pages: **Login**, **Regi
 - [Database](#database)
 - [CRUD Operations](#crud-operations)
 - [UI/UX](#uiux)
-- [Security](#security)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ---
 
@@ -71,7 +69,7 @@ This is a simple to-do list application with three main pages: **Login**, **Regi
 
    ```bash
    https://github.com/sphllzulu/ToDoReact.git
-   cd todo-sqlite-app
+   cd ToDoReact
 
 2. Install the dependencies:
 
@@ -123,15 +121,5 @@ User Authentication: Users must log in with valid credentials to access their to
 Authorisation: Only the logged-in user can access their own tasks.
 Validation: Input fields for login, registration, and to-do items are properly validated to prevent errors and bad data.
 
-## Contributing
-We welcome contributions from the community! To contribute:
-Fork the repository.
-Create a new feature branch (git checkout -b feature/your-feature).
-Make your changes.
-Commit your changes (git commit -m 'Add new feature').
-Push to the branch (git push origin feature/your-feature).
-Open a Pull Request.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
    
